@@ -73,13 +73,16 @@ function Speaker(name, brand, type = "", soundVolume = 0, weight = 0, battery, p
     this.weight = weight; // units of measurement - kg
 }
 
-const monitor = new ComputerMonitor(model = "27GN750-B", brand = "LG", size = 27, resolution = [1920, 1080], refreshRate = 240, powerConsumption = 48, pluggedIn = false, turnedOn = false);
-const speaker = new Speaker(model = "The New SOUNDBOKS (3rd Gen)", brand = "SOUNDBOKS", type = "wireless", soundVolume = 126, weight = 15.4, battery = [true, true], powerConsumption = 99.84, pluggedIn = false, turnedOn = false);
-
-monitor.prototype.turnOn();
-speaker.prototype.turnOn();
-monitor.prototype.turnOff();
-speaker.prototype.turnOff();
-
-console.log(monitor);
-console.log(speaker);
+(() => {
+    const monitor = new ComputerMonitor(model = "27GN750-B", brand = "LG", size = 27, resolution = [1920, 1080], refreshRate = 240, powerConsumption = 48, pluggedIn = false, turnedOn = false);
+    const speaker = new Speaker(model = "The New SOUNDBOKS (3rd Gen)", brand = "SOUNDBOKS", type = "wireless", soundVolume = 126, weight = 15.4, battery = [true, true], powerConsumption = 99.84, pluggedIn = false, turnedOn = false);
+    console.log('Task 4:');
+    monitor.prototype.turnOn();
+    speaker.prototype.turnOn();
+    monitor.prototype.turnOff();
+    speaker.prototype.turnOff();
+    console.log(monitor);
+    console.log(speaker);
+    console.log(' ');
+    console.log(' ');
+})();

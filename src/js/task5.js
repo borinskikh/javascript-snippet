@@ -1,12 +1,12 @@
-class Device {
-    constructor(name = "Device", description = "Description", brand = "Brand") {
+class Device5 {
+    constructor(name = "Device5", description = "Description", brand = "Brand") {
         this.name = name;
         this.description = description;
         this.brand = brand;
     }
 }
 
-class ElectronicDevice extends Device {
+class ElectronicDevice5 extends Device5 {
     constructor(name, description, brand, battery = [false, false], powerConsumption = 0, pluggedIn = false, turnedOn = false) {
         super(name, description, brand);
         this.battery = battery; // [does it have a battery, is it charged]
@@ -59,7 +59,7 @@ class ElectronicDevice extends Device {
     }
 }
 
-class ComputerMonitor extends ElectronicDevice {
+class ComputerMonitor5 extends ElectronicDevice5 {
     constructor(name, brand, size = 0, resolution = [0, 0], refreshRate = 0, powerConsumption, pluggedIn, turnedOn) {
         const description = 'A computer monitor is an output device that displays information in pictorial form. A monitor usually comprises the visual display, circuitry, casing, and power supply. The display device in modern monitors is typically a thin film transistor liquid crystal display with LED backlighting having replaced cold-cathode fluorescent lamp backlighting.';
         const battery = [false, false];
@@ -71,7 +71,7 @@ class ComputerMonitor extends ElectronicDevice {
     }
 }
 
-class Speaker extends ElectronicDevice {
+class Speaker5 extends ElectronicDevice5 {
     constructor(name, brand, type = "", soundVolume = 0, weight = 0, battery, pluggedIn, turnedOn) {
         const description = 'Speakers are transducers that convert electromagnetic waves into sound waves. The speakers receive audio input from a device such as a computer or an audio receiver. This input may be either in analog or digital form. Analog speakers simply amplify the analog electromagnetic waves into sound waves. Since sound waves are produced in analog form, digital speakers must first convert the digital input to an analog signal, then generate the sound waves.';
         super(name, description, brand, battery, pluggedIn, turnedOn);
@@ -81,13 +81,19 @@ class Speaker extends ElectronicDevice {
     }
 }
 
-const monitor = new ComputerMonitor(model = "27GN750-B", brand = "LG", size = 27, resolution = [1920, 1080], refreshRate = 240, powerConsumption = 48, pluggedIn = false, turnedOn = false);
-const speaker = new Speaker(model = "The New SOUNDBOKS (3rd Gen)", brand = "SOUNDBOKS", type = "wireless", soundVolume = 126, weight = 15.4, battery = [true, true], powerConsumption = 99.84, pluggedIn = false, turnedOn = false);
+(() => {
+    const monitor = new ComputerMonitor5(model = "27GN750-B", brand = "LG", size = 27, resolution = [1920, 1080], refreshRate = 240, powerConsumption = 48, pluggedIn = false, turnedOn = false);
+    const speaker = new Speaker5(model = "The New SOUNDBOKS (3rd Gen)", brand = "SOUNDBOKS", type = "wireless", soundVolume = 126, weight = 15.4, battery = [true, true], powerConsumption = 99.84, pluggedIn = false, turnedOn = false);
 
-monitor.turnOn();
-speaker.turnOn();
-monitor.turnOff();
-speaker.turnOff();
+    console.log('Task 5:');
 
-console.log(monitor);
-console.log(speaker);
+    monitor.turnOn();
+    speaker.turnOn();
+    monitor.turnOff();
+    speaker.turnOff();
+
+    console.log(monitor);
+    console.log(speaker);
+    console.log(' ');
+    console.log(' ');
+})();
